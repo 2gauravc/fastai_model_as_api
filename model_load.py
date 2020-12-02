@@ -10,3 +10,9 @@ learn_inf = load_learner(model_path)
 
 print(learn_inf.dls.vocab)
 
+#Predicting 
+g =  get_image_files('./input')
+
+for img in g:
+    lbl = learn_inf.predict(img)
+    print("Image {}; Predicted Label {}".format(img, lbl))
