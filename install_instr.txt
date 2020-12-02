@@ -1,0 +1,41 @@
+ Install Conda 
+--------------------------------------
+    2  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    3  chmod +x Miniconda3-latest-Linux-x86_64.sh
+    4  ./Miniconda3-latest-Linux-x86_64.sh
+    5  rm ./Miniconda3-latest-Linux-x86_64.sh
+
+Create and Activate Env
+---------------------------------------
+    6  conda create -n fastai-dev python=3.6
+    7  conda activate fastai-dev
+
+Make Project Directory 
+--------------------------------------
+    8  mkdit w-yrs
+   10  cd w-yrs/
+   
+Install CUDA 
+------------------------------------------
+   18  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+   19  sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+   20  sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+   21  sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /"
+   22  sudo apt-get update
+   23  sudo apt-get -y install cuda
+
+Install PyTorch
+--------------------------------------------
+   28  pip install torch torchvision
+   
+
+Install fastAI
+--------------------------------------------
+   39  pip install fastai
+
+Install Other Utilities
+--------------------------------------------
+   46  pip install timm
+   47  python3 model_load.py 
+   48  pip install ipython
+
