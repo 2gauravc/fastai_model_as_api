@@ -1,3 +1,9 @@
+EC2 Config needed: 
+--------------------------------------
+    1 Ubuntu 18.04 
+    2 HDD 20 GB  
+
+
  Install Conda 
 --------------------------------------
     2  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -15,7 +21,7 @@ Make Project Directory
     8  mkdit w-yrs
    10  cd w-yrs/
    
-Install CUDA 
+Install CUDA  (NOT NEEDED)
 ------------------------------------------
    18  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
    19  sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
@@ -24,11 +30,6 @@ Install CUDA
    22  sudo apt-get update
    23  sudo apt-get -y install cuda
 
-Install PyTorch
---------------------------------------------
-   28  pip install torch torchvision
-   
-
 Install fastAI
 --------------------------------------------
    39  pip install fastai
@@ -36,6 +37,6 @@ Install fastAI
 Install Other Utilities
 --------------------------------------------
    46  pip install timm
-   47  python3 model_load.py 
    48  pip install ipython
+   47  python3 model_load.py 
 
