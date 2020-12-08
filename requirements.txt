@@ -1,0 +1,4 @@
+fastai
+timm
+ipython
+boto3

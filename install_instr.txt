@@ -11,6 +11,34 @@ EC2 Config needed:
     4  ./Miniconda3-latest-Linux-x86_64.sh
     5  rm ./Miniconda3-latest-Linux-x86_64.sh
 
+Install Docker 
+---------------------------------------
+wget https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/containerd.io_1.2.4-1_amd64.deb
+wget https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/docker-ce-cli_18.09.3~3-0~ubuntu-bionic_amd64.deb
+wget https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/docker-ce_18.09.3~3-0~ubuntu-bionic_amd64.deb
+sudo dpkg -i containerd.io_1.2.4-1_amd64.deb
+sudo dpkg -i docker-ce-cli_18.09.3~3-0~ubuntu-bionic_amd64.deb
+sudo dpkg -i docker-ce_18.09.3~3-0~ubuntu-bionic_amd64.deb
+sudo systemctl enable docker
+sudo docker run hello-world
+
+Install Serverless
+---------------------------------------------
+curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
+sudo apt-get install -y nodejs
+nodejs -v
+npm -v
+sudo npm install -g serverless
+sudo chown -R $USER:$(id -gn $USER) /home/ubuntu/.config
+
+
+Configure Serverless 
+-------------------------------------------
+sls config credentials --provider aws --key  <<key>> --scerte <<secret>>
+
+
+
 Create and Activate Env
 ---------------------------------------
     6  conda create -n fastai-dev python=3.6
