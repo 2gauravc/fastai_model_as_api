@@ -61,7 +61,9 @@ custom:
     useDownloadCache: true
     useStaticCache: true
     slimPatterns:
-      - "**/markdown*"             
-
+      - "**/markdown*"  
+      - "**/scipy*"
+      - "**spacy*"
+      - "**blis*"
 plugins:
   - serverless-python-requirements

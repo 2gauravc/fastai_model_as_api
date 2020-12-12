@@ -21,6 +21,7 @@ sudo dpkg -i docker-ce-cli_18.09.3~3-0~ubuntu-bionic_amd64.deb
 sudo dpkg -i docker-ce_18.09.3~3-0~ubuntu-bionic_amd64.deb
 sudo systemctl enable docker
 sudo docker run hello-world
+rm *.deb 
 
 Install Serverless
 ---------------------------------------------
@@ -31,7 +32,7 @@ nodejs -v
 npm -v
 sudo npm install -g serverless
 sudo chown -R $USER:$(id -gn $USER) /home/ubuntu/.config
-
+rm nodesource_setup.sh
 
 Configure Serverless 
 -------------------------------------------
@@ -66,12 +67,13 @@ Install Other Utilities
 --------------------------------------------
    46  pip install timm
    48  pip install ipython
-   47  python3 model_load.py 
+   49 pip install boto3
+   47 python3 model_load.py 
 
 Create the serverless project 
 ---------------------------------------------
-sls create --template aws-python3 --name <<service-name>>
 sls plugin install -n serverless-python-requirements 
+sls create --template aws-python3 --name w-yrs-vjump 
 
 Edit the files
 ------------------------------------------------
@@ -81,7 +83,8 @@ requirements.txt
 
 Test the Function Locally 
 ----------------------------------------------------
-sls invoke local --function <<function-name>> --path event.json
+mkdir tmp/
+sls invoke local --function fastai-classify --path event.json
 
 Deploy the Function 
 -----------------------------------------------------
