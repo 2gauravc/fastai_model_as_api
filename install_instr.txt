@@ -35,7 +35,7 @@ sudo chown -R $USER:$(id -gn $USER) /home/ubuntu/.config
 
 Configure Serverless 
 -------------------------------------------
-sls config credentials --provider aws --key  <<key>> --scerte <<secret>>
+sls config credentials --provider aws --key  <<key>> --secret <<secret>>
 
 
 
@@ -68,3 +68,22 @@ Install Other Utilities
    48  pip install ipython
    47  python3 model_load.py 
 
+Create the serverless project 
+---------------------------------------------
+sls create --template aws-python3 --name <<service-name>>
+sls plugin install -n serverless-python-requirements 
+
+Edit the files
+------------------------------------------------
+handler.py 
+serverless.yml 
+requirements.txt 
+
+Test the Function Locally 
+----------------------------------------------------
+sls invoke local --function <<function-name>> --path event.json
+
+Deploy the Function 
+-----------------------------------------------------
+sudo sls deploy 
+sls invoke --function <<function-name>> --path event.json --log
