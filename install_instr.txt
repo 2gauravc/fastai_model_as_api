@@ -97,4 +97,4 @@ sudo sls package /*Create the .requirement.zip file*/
 unzip .requirements.zip -d temp_zip_extract/ /* Unzip it */
 du -m --max-depth 1 | sort -rn /* Find the largest folders inside it */ 
 Exclude the largest folders in slim patterns 
-
+du -h -s $(conda info --base)/envs/fastai-dev /* Check size of env*/

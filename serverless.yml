@@ -37,6 +37,8 @@ package:
     - __pycache__/**
     - .ipynb_checkpoints/**
     - (*).ipynb
+    - input/**
+    - model/**
 
 functions:
   fastai-classify:
@@ -68,6 +70,9 @@ custom:
       - "**/botocore*"
       - "**/pandas*"
       - "**/scipy.libs/*"
+      - "**/torch/lib/libcaffe2_detectron_ops_gpu.so"
+      - "**/torch/lib/libnvrtc-08c4863f.so.10.2"
+      - "**/torch/lib/libcaffe2_detectron_ops_gpu.so"
     noDeploy:
       - scipy
       - spacy
