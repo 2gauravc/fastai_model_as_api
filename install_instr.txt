@@ -90,3 +90,11 @@ Deploy the Function
 -----------------------------------------------------
 sudo sls deploy 
 sls invoke --function <<function-name>> --path event.json --log
+
+Reduce Package Size
+----------------------------------------------------------------
+sudo sls package /*Create the .requirement.zip file*/
+unzip .requirements.zip -d temp_zip_extract/ /* Unzip it */
+du -m --max-depth 1 | sort -rn /* Find the largest folders inside it */ 
+Exclude the largest folders in slim patterns 
+

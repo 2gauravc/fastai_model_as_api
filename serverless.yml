@@ -57,13 +57,25 @@ custom:
     dockerizePip: true
     slim: true
     zip: true
-    noDeploy: []
-    useDownloadCache: true
-    useStaticCache: true
+    useDownloadCache: false
+    useStaticCache: false
     slimPatterns:
       - "**/markdown*"  
       - "**/scipy*"
-      - "**spacy*"
-      - "**blis*"
+      - "**/spacy*"
+      - "**/blis*"
+      - "**/caffe2*"
+      - "**/botocore*"
+      - "**/pandas*"
+      - "**/scipy.libs/*"
+    noDeploy:
+      - scipy
+      - spacy
+      - blis
+      - caffe2
+      - botocore
+      - pandas
+
+
 plugins:
   - serverless-python-requirements
